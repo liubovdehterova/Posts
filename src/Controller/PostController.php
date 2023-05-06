@@ -12,8 +12,8 @@ class PostController
 {
     public function index()
     {
-        $posts = Post::all();
-        echo view('pages/list-post', compact('posts'));
+        $pages = Post::paginate(3);
+        echo view('pages/list-post', compact('pages'));
     }
     public function create()
     {

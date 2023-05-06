@@ -17,24 +17,24 @@
             <div class="col text-light">Update</div>
             <div class="col text-light">Delete</div>
         </div>
-        @foreach($tags as $tag)
+        @foreach($pages as $page)
             <div class="row border border-top-0 bg-dark bg-gradient">
                 <div class="col text-light">
-                    {{ $tag->id }}
+                    {{ $page->id }}
                 </div>
                 <div class="col text-light">
-                    {{ $tag->title }}
+                    {{ $page->title }}
                 </div>
                 <div class="col text-light">
-                    {{ $tag->slug }}
+                    {{ $page->slug }}
                 </div>
                 <div class="col">
-                    <a href="/tag/{{ $tag->id  }}/edit">
+                    <a href="/tag/{{ $page->id  }}/edit">
                         Update Tag
                     </a>
                 </div>
                 <div class="col">
-                    <a href="/tag/{{ $tag->id }}/destroy">
+                    <a href="/tag/{{ $page->id }}/destroy">
                         Delete Tag
                     </a>
                 </div>
@@ -45,3 +45,4 @@
         unset($_SESSION['message']);
     @endphp
 @endsection
+@include('paginator')

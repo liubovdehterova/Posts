@@ -10,8 +10,10 @@ class TagController
 {
     public function index()
     {
-        $tags = Tag::all();
-        echo view('pages/list-tags', compact('tags'));
+//        $tags = Tag::withTrashed()->get(); дістає всі і видвлені також
+//
+        $pages = Tag::paginate(3);
+        echo view('pages/list-tags', compact('pages'));
     }
     public function create()
     {

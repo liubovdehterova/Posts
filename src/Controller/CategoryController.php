@@ -11,8 +11,8 @@ class CategoryController
 {
     public function index()
     {
-        $categories = Category::all();
-        echo view('pages/list-categories', compact('categories'));
+        $pages = Category::paginate(3);
+        echo view('pages/list-categories', compact('pages'));
     }
     public function create()
     {
